@@ -1,0 +1,323 @@
+@font-face {
+  font-family: "PangramSansRounded";
+  src: url("/fonts/PPPangramSansRounded-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PangramSansRounded";
+  src: url("/fonts/PPPangramSansRounded-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PangramSansRounded";
+  src: url("/fonts/PPPangramSansRounded-Medium.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PangramSansRounded";
+  src: url("/fonts/PPPangramSansRounded-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PangramSansRounded";
+  src: url("/fonts/PPPangramSansRounded-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PangramSansRounded";
+  src: url("/fonts/PPPangramSansRounded-ExtraboldItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "PangramSansRounded", system-ui, sans-serif;
+  --font-mono: "PangramSansRounded", system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+/* Force dark theme variables */
+:root {
+  --background: #111111;
+  --foreground: #ffffff;
+  --card: #111111;
+  --card-foreground: #ffffff;
+  --popover: #000000;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: rgba(255,255,255,0.05);
+  --secondary-foreground: #ffffff;
+  --muted: rgba(255,255,255,0.05);
+  --muted-foreground: #9ca3af;
+  --accent: rgba(255,255,255,0.05);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: rgba(255,255,255,0.2);
+  --input: rgba(255,255,255,0.1);
+  --ring: rgba(255,255,255,0.3);
+  --radius: 0rem;
+}
+
+@layer base {
+  * {
+    border-color: rgba(255,255,255,0.2);
+    font-family: "PangramSansRounded", system-ui, sans-serif;
+  }
+  body {
+    background-color: #111;
+    color: #fff;
+    font-family: "PangramSansRounded", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ── Grid lines background (manicule style) ─────────────────── */
+.grid-lines {
+  background-image:
+    linear-gradient(to right,  rgba(255,255,255,1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,1) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* ── Noise animation (pixel prediction) ─────────────────────── */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; filter: blur(0.5px); }
+}
+.flicker { animation: flicker 0.12s infinite; }
+
+/* ── Flow dot ────────────────────────────────────────────────── */
+@keyframes flowDot {
+  0%   { opacity: 0; offset-distance: 0%; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; offset-distance: 100%; }
+}
+.flow-dot { animation: flowDot 1.8s linear infinite; }
+
+/* ── Fade in animations ──────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in       { animation: fadeInUp 0.7s ease forwards; }
+.animate-fade-in-delay { animation: fadeInUp 0.7s ease 0.25s forwards; opacity: 0; }
+
+/* ── Section label style ─────────────────────────────────────── */
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+/* ── Display heading style ───────────────────────────────────── */
+.type-display {
+  font-size: clamp(2.8rem, 8vw, 7rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+.type-display-section {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.94;
+}
+
+/* ── Brutalist button ────────────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #fff;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 0.15s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: rgba(255,255,255,0.85); }
+
+.btn-outline {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+}
+.btn-outline:hover { background: #fff; color: #000; }
+
+/* ── Demo container ──────────────────────────────────────────── */
+.demo-wrap {
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.02);
+}
+
+/* ── Note preview prose ──────────────────────────────────────── */
+.note-prose {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.75;
+  font-size: 0.9rem;
+}
+.note-prose h1 { font-size: 1.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; margin: 1.5rem 0 0.75rem; color: #fff; }
+.note-prose h2 { font-size: 1.15rem; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; margin: 1.5rem 0 0.5rem; color: #fff; }
+.note-prose h3 { font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin: 1.25rem 0 0.4rem; color: rgba(255,255,255,0.75); }
+.note-prose p  { margin: 0.6rem 0; color: rgba(255,255,255,0.7); }
+.note-prose strong { color: #fff; font-weight: 700; }
+.note-prose em { color: rgba(255,255,255,0.65); font-style: italic; }
+.note-prose a  { color: #818cf8; text-decoration: underline; text-underline-offset: 3px; }
+.note-prose a:hover { color: #a5b4fc; }
+.note-prose blockquote { border-left: 2px solid rgba(255,255,255,0.2); padding-left: 1rem; margin: 1rem 0; color: rgba(255,255,255,0.45); font-style: italic; }
+.note-prose code { font-family: monospace; font-size: 0.82em; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 0.1em 0.4em; border-radius: 2px; color: #a5b4fc; }
+.note-prose pre  { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 1rem 1.25rem; margin: 1rem 0; overflow-x: auto; }
+.note-prose pre code { background: none; border: none; padding: 0; color: rgba(255,255,255,0.75); }
+.note-prose ul, .note-prose ol { padding-left: 1.4rem; margin: 0.5rem 0; color: rgba(255,255,255,0.65); }
+.note-prose li { margin: 0.25rem 0; }
+.note-prose li input[type="checkbox"] { margin-right: 0.4rem; }
+.note-prose hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 1.5rem 0; }
+.note-prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+.note-prose th { text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); border-bottom: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 0.75rem; }
+.note-prose td { padding: 0.4rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.65); }
+.note-prose tr:last-child td { border-bottom: none; }
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+
+/* ── Color theme ─────────────────────────────────────────────── */
+/*
+ * All backgrounds → warm light (#e8e6e0 / #f0ede6)
+ * All text        → #1925aa at various opacities — zero white text
+ * SVG text        → #1925aa via svg text selector
+ * Solid white UI  → #1925aa (bars, active buttons)
+ */
+[data-theme="color"] {
+
+  /* ── Body & backgrounds ── */
+  body            { background-color: #e8e6e0 !important; color: #1925aa; }
+  .bg-\[\#111\]   { background-color: #f0ede6 !important; }
+  .bg-\[\#000\]   { background-color: #e8e6e0 !important; }
+
+  /* ── Nav ── */
+  nav {
+    background-color: #e8e6e0 !important;
+    border-color: color-mix(in oklab, #1925aa 20%, transparent) !important;
+  }
+
+  /* ── All text → blue palette ── */
+  .text-white     { color: #1925aa !important; }
+  .text-white\/40 { color: color-mix(in oklab, #1925aa 40%, transparent) !important; }
+  .text-white\/60 { color: color-mix(in oklab, #1925aa 60%, transparent) !important; }
+  .text-gray-400  { color: color-mix(in oklab, #1925aa 60%, transparent) !important; }
+  .text-gray-500  { color: color-mix(in oklab, #1925aa 50%, transparent) !important; }
+  .text-gray-600  { color: color-mix(in oklab, #1925aa 45%, transparent) !important; }
+
+  /* ── SVG text → blue (covers hardcoded fill="white" in diagrams) ── */
+  svg text { fill: #1925aa !important; }
+
+  /* ── Borders ── */
+  .border-white\/10 { border-color: color-mix(in oklab, #1925aa 10%, transparent) !important; }
+  .border-white\/20 { border-color: color-mix(in oklab, #1925aa 22%, transparent) !important; }
+  .border-white\/40 { border-color: color-mix(in oklab, #1925aa 40%, transparent) !important; }
+
+  /* ── Surfaces & hover ── */
+  .bg-white\/5            { background-color: color-mix(in oklab, #1925aa  6%, transparent) !important; }
+  .bg-white\/8            { background-color: color-mix(in oklab, #1925aa  9%, transparent) !important; }
+  .bg-white\/10           { background-color: color-mix(in oklab, #1925aa 11%, transparent) !important; }
+  .bg-white\/20           { background-color: color-mix(in oklab, #1925aa 20%, transparent) !important; }
+  .hover\:bg-white\/5:hover { background-color: color-mix(in oklab, #1925aa 8%, transparent) !important; }
+  .hover\:text-white:hover  { color: #1925aa !important; }
+
+  /* ── Solid white elements (LatentVector bars, active demo buttons) ── */
+  .bg-white  { background-color: #1925aa !important; }
+  .text-black { color: #e8e6e0 !important; }
+  .hover\:bg-white\/85:hover { background-color: color-mix(in oklab, #1925aa 85%, #e8e6e0) !important; }
+
+  /* ── Page buttons ── */
+  .btn-primary { background: #1925aa !important; color: #e8e6e0 !important; }
+  .btn-primary:hover { background: color-mix(in oklab, #1925aa 85%, #000) !important; }
+  .btn-outline { color: #1925aa !important; border-color: color-mix(in oklab, #1925aa 40%, transparent) !important; }
+  .btn-outline:hover { background: #1925aa !important; color: #e8e6e0 !important; }
+
+  /* ── Section label ── */
+  .section-label { color: color-mix(in oklab, #1925aa 50%, transparent); }
+
+  /* ── Grid lines ── */
+  .grid-lines {
+    background-image:
+      linear-gradient(to right,  color-mix(in oklab, #1925aa 12%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, #1925aa 12%, transparent) 1px, transparent 1px);
+  }
+
+  /* ── Demo wrap ── */
+  .demo-wrap {
+    border-color: color-mix(in oklab, #1925aa 20%, transparent) !important;
+    background: color-mix(in oklab, #1925aa 3%, transparent) !important;
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar-track { background: #e8e6e0; }
+  ::-webkit-scrollbar-thumb { background: color-mix(in oklab, #1925aa 25%, transparent); }
+  ::-webkit-scrollbar-thumb:hover { background: color-mix(in oklab, #1925aa 45%, transparent); }
+}

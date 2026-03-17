@@ -1,0 +1,93 @@
+{
+  "nodes": [
+    {
+      "id": "f-jepa",
+      "name": "JEPA — Concepts",
+      "type": "folder",
+      "parentId": null,
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "f-wm",
+      "name": "World Models",
+      "type": "folder",
+      "parentId": null,
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "f-talk",
+      "name": "Tech Talk",
+      "type": "folder",
+      "parentId": null,
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "n-vue",
+      "name": "Vue d'ensemble",
+      "type": "file",
+      "parentId": "f-jepa",
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "n-ijepa",
+      "name": "I-JEPA",
+      "type": "file",
+      "parentId": "f-jepa",
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "n-vjepa",
+      "name": "V-JEPA",
+      "type": "file",
+      "parentId": "f-jepa",
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "n-arch",
+      "name": "Architecture",
+      "type": "file",
+      "parentId": "f-wm",
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "n-agent",
+      "name": "Agent & Planning",
+      "type": "file",
+      "parentId": "f-wm",
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "n-plan",
+      "name": "Plan de présentation",
+      "type": "file",
+      "parentId": "f-talk",
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "n-qa",
+      "name": "Questions & Réponses",
+      "type": "file",
+      "parentId": "f-talk",
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    },
+    {
+      "id": "n-refs",
+      "name": "Références",
+      "type": "file",
+      "parentId": null,
+      "createdAt": 1742040000000,
+      "updatedAt": 1742040000000
+    }
+  ],
+  "updatedAt": 1773531529757
+}
