@@ -1,3 +1,9 @@
+@import "tailwindcss";
+@source "../..";
+@source not "../../public/**";
+@source not "../../notes-data/**";
+@source not "../../backend/**";
+
 @font-face {
   font-family: "PangramSansRounded";
   src: url("/fonts/PPPangramSansRounded-Thin.otf") format("opentype");
@@ -40,11 +46,6 @@
   font-style: italic;
   font-display: swap;
 }
-
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -118,7 +119,7 @@
   }
 }
 
-/* ── Grid lines background (manicule style) ─────────────────── */
+/* -- Grid lines background (manicule style) ------------------- */
 .grid-lines {
   background-image:
     linear-gradient(to right,  rgba(255,255,255,1) 1px, transparent 1px),
@@ -126,14 +127,14 @@
   background-size: 80px 80px;
 }
 
-/* ── Noise animation (pixel prediction) ─────────────────────── */
+/* -- Noise animation (pixel prediction) ----------------------- */
 @keyframes flicker {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.7; filter: blur(0.5px); }
 }
 .flicker { animation: flicker 0.12s infinite; }
 
-/* ── Flow dot ────────────────────────────────────────────────── */
+/* -- Flow dot -------------------------------------------------- */
 @keyframes flowDot {
   0%   { opacity: 0; offset-distance: 0%; }
   10%  { opacity: 1; }
@@ -142,7 +143,7 @@
 }
 .flow-dot { animation: flowDot 1.8s linear infinite; }
 
-/* ── Fade in animations ──────────────────────────────────────── */
+/* -- Fade in animations ---------------------------------------- */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -150,7 +151,7 @@
 .animate-fade-in       { animation: fadeInUp 0.7s ease forwards; }
 .animate-fade-in-delay { animation: fadeInUp 0.7s ease 0.25s forwards; opacity: 0; }
 
-/* ── Section label style ─────────────────────────────────────── */
+/* -- Section label style --------------------------------------- */
 .section-label {
   font-size: 0.65rem;
   font-weight: 400;
@@ -159,7 +160,7 @@
   color: #6b7280;
 }
 
-/* ── Display heading style ───────────────────────────────────── */
+/* -- Display heading style ------------------------------------- */
 .type-display {
   font-size: clamp(2.8rem, 8vw, 7rem);
   font-weight: 700;
@@ -175,7 +176,7 @@
   line-height: 0.94;
 }
 
-/* ── Brutalist button ────────────────────────────────────────── */
+/* -- Brutalist button ------------------------------------------ */
 .btn-primary {
   display: inline-block;
   padding: 1rem 2rem;
@@ -206,13 +207,13 @@
 }
 .btn-outline:hover { background: #fff; color: #000; }
 
-/* ── Demo container ──────────────────────────────────────────── */
+/* -- Demo container -------------------------------------------- */
 .demo-wrap {
   border: 1px solid rgba(255,255,255,0.2);
   background: rgba(255,255,255,0.02);
 }
 
-/* ── Note preview prose ──────────────────────────────────────── */
+/* -- Note preview prose ---------------------------------------- */
 .note-prose {
   color: rgba(255,255,255,0.85);
   line-height: 1.75;
@@ -239,33 +240,33 @@
 .note-prose td { padding: 0.4rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.65); }
 .note-prose tr:last-child td { border-bottom: none; }
 
-/* ── Scrollbar ───────────────────────────────────────────────── */
+/* -- Scrollbar ------------------------------------------------- */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
 
-/* ── Color theme ─────────────────────────────────────────────── */
+/* -- Color theme ----------------------------------------------- */
 /*
- * All backgrounds → warm light (#e8e6e0 / #f0ede6)
- * All text        → #1925aa at various opacities — zero white text
- * SVG text        → #1925aa via svg text selector
- * Solid white UI  → #1925aa (bars, active buttons)
+ * All backgrounds - warm light (#e8e6e0 / #f0ede6)
+ * All text        - #1925aa at various opacities - zero white text
+ * SVG text        - #1925aa via svg text selector
+ * Solid white UI  - #1925aa (bars, active buttons)
  */
 [data-theme="color"] {
 
-  /* ── Body & backgrounds ── */
+  /* -- Body & backgrounds -- */
   body            { background-color: #e8e6e0 !important; color: #1925aa; }
   .bg-\[\#111\]   { background-color: #f0ede6 !important; }
   .bg-\[\#000\]   { background-color: #e8e6e0 !important; }
 
-  /* ── Nav ── */
+  /* -- Nav -- */
   nav {
     background-color: #e8e6e0 !important;
     border-color: color-mix(in oklab, #1925aa 20%, transparent) !important;
   }
 
-  /* ── All text → blue palette ── */
+  /* -- All text - blue palette -- */
   .text-white     { color: #1925aa !important; }
   .text-white\/40 { color: color-mix(in oklab, #1925aa 40%, transparent) !important; }
   .text-white\/60 { color: color-mix(in oklab, #1925aa 60%, transparent) !important; }
@@ -273,15 +274,15 @@
   .text-gray-500  { color: color-mix(in oklab, #1925aa 50%, transparent) !important; }
   .text-gray-600  { color: color-mix(in oklab, #1925aa 45%, transparent) !important; }
 
-  /* ── SVG text → blue (covers hardcoded fill="white" in diagrams) ── */
+  /* -- SVG text - blue (covers hardcoded fill="white" in diagrams) -- */
   svg text { fill: #1925aa !important; }
 
-  /* ── Borders ── */
+  /* -- Borders -- */
   .border-white\/10 { border-color: color-mix(in oklab, #1925aa 10%, transparent) !important; }
   .border-white\/20 { border-color: color-mix(in oklab, #1925aa 22%, transparent) !important; }
   .border-white\/40 { border-color: color-mix(in oklab, #1925aa 40%, transparent) !important; }
 
-  /* ── Surfaces & hover ── */
+  /* -- Surfaces & hover -- */
   .bg-white\/5            { background-color: color-mix(in oklab, #1925aa  6%, transparent) !important; }
   .bg-white\/8            { background-color: color-mix(in oklab, #1925aa  9%, transparent) !important; }
   .bg-white\/10           { background-color: color-mix(in oklab, #1925aa 11%, transparent) !important; }
@@ -289,34 +290,34 @@
   .hover\:bg-white\/5:hover { background-color: color-mix(in oklab, #1925aa 8%, transparent) !important; }
   .hover\:text-white:hover  { color: #1925aa !important; }
 
-  /* ── Solid white elements (LatentVector bars, active demo buttons) ── */
+  /* -- Solid white elements (LatentVector bars, active demo buttons) -- */
   .bg-white  { background-color: #1925aa !important; }
   .text-black { color: #e8e6e0 !important; }
   .hover\:bg-white\/85:hover { background-color: color-mix(in oklab, #1925aa 85%, #e8e6e0) !important; }
 
-  /* ── Page buttons ── */
+  /* -- Page buttons -- */
   .btn-primary { background: #1925aa !important; color: #e8e6e0 !important; }
   .btn-primary:hover { background: color-mix(in oklab, #1925aa 85%, #000) !important; }
   .btn-outline { color: #1925aa !important; border-color: color-mix(in oklab, #1925aa 40%, transparent) !important; }
   .btn-outline:hover { background: #1925aa !important; color: #e8e6e0 !important; }
 
-  /* ── Section label ── */
+  /* -- Section label -- */
   .section-label { color: color-mix(in oklab, #1925aa 50%, transparent); }
 
-  /* ── Grid lines ── */
+  /* -- Grid lines -- */
   .grid-lines {
     background-image:
       linear-gradient(to right,  color-mix(in oklab, #1925aa 12%, transparent) 1px, transparent 1px),
       linear-gradient(to bottom, color-mix(in oklab, #1925aa 12%, transparent) 1px, transparent 1px);
   }
 
-  /* ── Demo wrap ── */
+  /* -- Demo wrap -- */
   .demo-wrap {
     border-color: color-mix(in oklab, #1925aa 20%, transparent) !important;
     background: color-mix(in oklab, #1925aa 3%, transparent) !important;
   }
 
-  /* ── Scrollbar ── */
+  /* -- Scrollbar -- */
   ::-webkit-scrollbar-track { background: #e8e6e0; }
   ::-webkit-scrollbar-thumb { background: color-mix(in oklab, #1925aa 25%, transparent); }
   ::-webkit-scrollbar-thumb:hover { background: color-mix(in oklab, #1925aa 45%, transparent); }

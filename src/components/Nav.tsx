@@ -9,6 +9,8 @@ const links = [
   { href: "/masking",           label: "02 — I-JEPA Masking" },
   { href: "/world-model",       label: "03 — World Model" },
   { href: "/espace-latent",     label: "04 — Espace Latent" },
+  { href: "/robotique",         label: "Robotique" },
+  { href: "/jepa-benchmark",    label: "Benchmark" },
   { href: "/papers",            label: "Papiers" },
   { href: "/notes",             label: "Notes" },
 ];
