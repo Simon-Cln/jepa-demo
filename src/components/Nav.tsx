@@ -12,7 +12,6 @@ const links = [
   { href: "/papers",            label: "Papiers" },
   { href: "/notes",             label: "Notes" },
 ];
-
 export function Nav() {
   const pathname = usePathname();
 

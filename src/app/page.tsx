@@ -46,7 +46,7 @@ export default function Home() {
 
           {/* Top label */}
           <p className="section-label mb-8 animate-fade-in">
-            [ Yann LeCun · Meta AI · 2022–2024 ]
+            [ Veille 16 mars 2026 ] 
           </p>
 
           {/* Two-column layout : title left, meta right */}
@@ -67,7 +67,7 @@ export default function Home() {
               <p className="text-gray-400 text-base leading-relaxed">
                 Les LLMs prédisent des tokens. JEPA prédit des{" "}
                 <em className="not-italic text-white">représentations abstraites</em>.
-                Une distinction fondamentale qui pourrait mener à de vraies IA autonomes.
+                Une distinction fondamentale qui pourrait mener à de vraies IA autonomes? 
               </p>
               <div className="flex flex-col gap-3">
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -106,10 +106,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="md:col-span-5 md:pl-8">
-              <p className="text-gray-400 text-base leading-relaxed">
-                Aucun modèle ML côté client. Chaque démo illustre un concept clé avec rigueur
-                conceptuelle — pour comprendre, pas pour impressionner.
-              </p>
+
             </div>
           </div>
         </div>
@@ -167,8 +164,8 @@ export default function Home() {
             </h2>
           </div>
           <div className="md:col-span-5 md:pl-8">
-            <span className="section-label block mb-2">Notre philosophie</span>
-            <p className="text-lg text-white/70">Les modèles génératifs mémorisent. JEPA comprend.</p>
+            <span className="section-label block mb-2">La philosophie</span>
+            <p className="text-lg text-white/70">Les modèles génératifs mémorisent, JEPA comprend.</p>
           </div>
         </div>
 

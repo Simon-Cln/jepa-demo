@@ -39,5 +39,4 @@ L'agent RL classique apprend par **essai-erreur** dans le monde réel. L'agent J
 ---
 
 ## Notes
-
 _Ajouter vos observations sur la démo World Model ici…_

@@ -16,7 +16,7 @@ export default function MaskingPage() {
             <p className="text-gray-400 text-base leading-relaxed max-w-lg">
               Masquez des zones de l&apos;image. JEPA prédit leur{" "}
               <em className="not-italic text-white">représentation latente</em> — sans jamais
-              reconstruire un pixel. Glissez la souris pour masquer plusieurs patches.
+              reconstruire un pixel.
             </p>
           </div>
         </div>
